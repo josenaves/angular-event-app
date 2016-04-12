@@ -1,14 +1,17 @@
 'use strict';
 
 eventsApp.controller('EventController',
-	// injeting services $scope and eventData into controller
-	function EventController($scope, eventData) {
+	// Injeting services $scope and eventData into controller; $log too
+	function EventController($scope, eventData, $log) {
 
 		$scope.sortorder = 'name';
 		$scope.query = "";
-		$scope.event = eventData.getEvent(function(event) {
-			$scope.event = event;
-		});
+		
+		eventData.getEvent()
+			.success(function(event) { $scope.event = event; })
+			.error(function(data, status, headers, config) {
+				$log.warn(data, status, headers, config);
+			});
 
 		$scope.upVoteSession = function(session) {
 			session.upVoteCount++;
