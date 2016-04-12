@@ -6,7 +6,9 @@ eventsApp.controller('EventController',
 
 		$scope.sortorder = 'name';
 		$scope.query = "";
-		$scope.event = eventData.event;
+		$scope.event = eventData.getEvent(function(event) {
+			$scope.event = event;
+		});
 
 		$scope.upVoteSession = function(session) {
 			session.upVoteCount++;
@@ -17,6 +19,4 @@ eventsApp.controller('EventController',
 		}		
 	}
 
-
-
-);
+); 
