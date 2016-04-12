@@ -35,6 +35,15 @@
                     "level": "Intermediate",
                     "abstract": "Controllers are the beginning of everything Angular does.  Learn how to craft controllers that will win the respect of your friends and neighbors.",
                     "upVoteCount": 0
+                },
+                {
+                    "id": 4,
+                    "name": "Ionic for newbies",
+                    "creatorName": "Joe Montana",
+                    "duration": 4,
+                    "level": "Intermediate",
+                    "abstract": "Ionic makes Angular and Cordova a great option to create mobile applications.",
+                    "upVoteCount": 0
                 }
             ]
         }

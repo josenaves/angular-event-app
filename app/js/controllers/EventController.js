@@ -1,8 +1,8 @@
 'use strict';
 
 eventsApp.controller('EventController',
-	// Injeting services $scope and eventData into controller; $log too
-	function EventController($scope, eventData, $log) {
+	// Injeting services $scope and eventData into controller; $anchorScroll too
+	function EventController($scope, eventData, $anchorScroll) {
 
 		//$scope.query = "";
 		$scope.sortorder = 'name';
@@ -18,7 +18,11 @@ eventsApp.controller('EventController',
 
 		$scope.downVoteSession = function(session) {
 			session.upVoteCount--;
-		}		
+		}
+
+		$scope.scrollToSession = function() {
+			$anchorScroll();
+		}
 	}
 
 ); 
