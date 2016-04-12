@@ -1,10 +1,15 @@
 'use strict';
 // We are injecting the $resource built-in service into our service
 eventsApp.factory('eventData', function($resource) {
+	var resource = $resource('/data/event/:id', {id: '@id'});
 	return {
 		getEvent: function() {
 			// now we are returning a promisse
-			return $resource('/data/event/:id', {id: '@id'}).get({id:1});
+			return resource.get({id:1});
+		},
+		save: function(event) {
+			event.id = 999;
+			return resource.save(event);
 		}
 	};
 });
