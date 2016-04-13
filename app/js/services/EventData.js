@@ -3,9 +3,9 @@
 eventsApp.factory('eventData', function($resource) {
 	var resource = $resource('/data/event/:id', {id: '@id'}, {"getAll" : {method: "GET", isArray: true}});
 	return {
-		getEvent: function() {
+		getEvent: function(eventId) {
 			// now we are returning a promisse
-			return resource.get({id:1});
+			return resource.get({id:eventId});
 		},
 		save: function(event) {
 			event.id = 999;

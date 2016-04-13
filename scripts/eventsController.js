@@ -15,7 +15,7 @@ module.exports.save = function(req, res) {
 };
 
 module.exports.getAll = function(req, res) {
-	var path = '../app/data/event';
+	var path = 'app/data/event';
 
 	var files = [];
 
